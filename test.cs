@@ -22,13 +22,8 @@ namespace myApp
 
             foreach(var n in data)
             {
-                bin=n.getBin();
                 Console.WriteLine(n.time.ToString());
-                foreach(var m in bin)
-                {
-                Console.WriteLine(m.ToString());
-
-                }
+                Console.WriteLine(n.ToStringBin());
             }
         }
     }
@@ -44,11 +39,15 @@ namespace myApp
         {
             this.bin = list;
         }
- //       @override
- //       public String ToString()
- //       {
- //           return("a");
- //       }
+        public String ToStringBin()
+        {
+    		String tmp ="";
+            foreach(var m in bin)
+            {
+		        tmp+=m.ToString();
+		    }
+            return(tmp);
+        }
     }
 
     class Bit
